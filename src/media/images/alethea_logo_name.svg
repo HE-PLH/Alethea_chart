@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50">
+    <style>
+        ._logo{
+            font-family:  segoe ui;
+            font-weight: bold;
+            fill: white;
+            stroke: blue;
+
+        }
+        .logo-name{
+            font-size: 40px;
+        }
+        .logo-name2{
+            font-size: 20px;
+            stroke: none;
+            font-family:  monospace;
+        }
+        .l-path{
+            stroke: none;
+        }
+    </style>
+    <g class="_logo" >
+        <rect x="0" y="5" width="180" height="42" fill="blue"></rect>
+        <path class="l-path" d="M0 0 Q12 25 0 50"/>
+        <path class="l-path" d="M10 50v-40L31 0v37L25 40v-34L16 13v34z"/>
+        <text x="30" y="30" stroke="none" class="logo-name">A</text>
+        <text x="60" y="30" class="logo-name">le</text>
+        <text x="91" y="30" stroke="none" class="logo-name">t</text>
+        <text x="105" y="30" class="logo-name">hea</text>
+        <text x="90" y="46" class="logo-name2">FINANCE</text>
+        <path class="l-path" d="M180 0Q158 25 180 50"/>
+
+    </g>
+</svg>

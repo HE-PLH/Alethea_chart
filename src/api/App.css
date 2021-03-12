@@ -1,0 +1,268 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+time, mark, audio, video {
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 0;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#chart-app-super-container{
+    width: 100%;
+    height: 100%;
+}
+
+#chart-body-container{
+    height: calc( 100% - 40px );
+    width: 100%;
+}
+
+.tops{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.row-frame{
+    display: flex;
+    flex-direction: row;
+}
+.col-frame{
+    display: flex;
+    flex-direction: column;
+}
+
+.vert-center{
+    align-items: center;
+}
+
+.hor-center{
+    justify-content: center;
+}
+
+
+.img-pos{
+
+}
+.logo_container{
+    min-width: 150px;
+    min-height: 100%;
+    background-color: white;
+}
+
+.collapsible-menu-bar-container{
+    flex: auto;
+    width: 500px;
+    height: 100%;
+    justify-content: flex-end;
+}
+.nav-link-container{
+    position: relative;
+    width: 70px;
+    height: 100%;
+    cursor: pointer;
+    color: darkblue;
+    font-weight: bold;
+}
+
+#toogle-menu-show{
+    display: none;
+}
+
+.nav-link{
+
+}
+
+.nav-link-div:hover{
+    color: blue;
+}
+
+.dropdown-container{
+    margin: 5px 0 0;
+    height: fit-content;
+    overflow: overlay;
+}
+
+.dropdown-list-item:hover{
+    background-color: #18d3fb;
+}
+
+.dropdown-list-item *{
+    pointer-events: none;
+}
+
+.dropdown-list-item{
+    cursor: pointer;
+    z-index: 5;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dropdown-div{
+    display: none;
+    position: absolute;
+    height: fit-content;
+    max-height: 200px;
+    width: 100px;
+    border-color: #e0e4e9;
+    color: #5b636a;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+    background-color: white;
+}
+.d-t-tip{
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    background-color: transparent;
+    height: 0;
+    width: 0;
+    border-top: solid transparent 10px;
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-bottom: solid white 10px;
+    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.07));
+}
+
+#main-body{
+    background-color: white;
+    height: calc(100% - 120px) !important;
+    width: 100% !important;
+}
+.m-body, #super-chart-widget-container{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#super-chart-widget{
+    table-layout:fixed;
+    width: 100% !important;
+    height: 100% !important;
+}
+#left-body-container, #right-body-container{
+    width: 50px;
+    background-color: #7f9af3;
+}
+#main-body-chart-container{
+    width: calc(100% - 80px) !important;
+}
+
+
+#main-chart-container{
+    width: 100%;
+	height: 100%;
+}
+
+
+#x-axis-scale-super-container{
+    width: 100% !important;
+    height: 40px !important;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.y-scale{
+    width: 50px;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+.y-canvas{
+    position: absolute;
+    cursor: n-resize;
+}
+
+.x-canvas{
+    cursor: crosshair;
+    position: absolute;
+}
+
+tbody{
+    height: 100% !important;
+}
+
+#droppable-action-button{
+    /*background-color: blue;*/
+}
+
+.ic{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+
+#droppable-action-button{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    border-right: .5px solid #bababa;
+    padding: 0 5px;
+    font: 14px segoe ui;
+    font-weight: bold;
+}
+
+#action-buttons-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bottom{
+    width: 100%;
+    height: 40px;
+    background-color: #5c70b0;
+}

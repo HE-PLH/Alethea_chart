@@ -11,16 +11,15 @@ import {execute_draw} from "../drawer/drawGraph";
 import {adjustDimensions, Creator, getContext2D} from "../utilities/chart-canvas";
 import {lazyEffect} from "../utilities/resize_throttle";
 import {settings, customSettings} from "../utilities/settings";
-import {drawMarkLinesAt} from "../utilities/time_distributor";
 
-const MainChartCanvas = props => {
+const MainTimeScaleCanvas = props => {
     const canvasRef =  useRef(null);
 
     useEffect(()=>{
         const canvas = canvasRef.current;
-        globals.main_canvas_view_context = getContext2D(new Creator(canvas).style({dimensions:props.dimensions}));
-        props.draw();
-       
+        globals.time_canvas_main_view_context = getContext2D(new Creator(canvas).style({dimensions:props.dimensions}));
+
+        props.drawXScale();
     });
 
     const handleEarlyClick = (e)=>{
@@ -32,10 +31,6 @@ const MainChartCanvas = props => {
     };
 
     const handleMouseMove = (e)=>{
-        globals.coordinate = {x: e.clientX - e.target.offsetLeft, y: e.clientY - e.target.offsetTop};
-        // console.log(globals.price_canvas_top_view_context)
-        drawMarkLinesAt(globals.coordinate, props.dimensions, props.x_scale_dimensions, props.y_scale_dimensions, props.candleStick.barWidth)
-        // drawMarkLinesAt(globals.coordinate, props.dimensions, props.x_scale_dimensions, props.y_scale_dimensions, props.candleStick.barWidth)
         on_mouse_move(e);
         if (is_dragging()) {
             handleDrag(e);
@@ -55,10 +50,9 @@ const MainChartCanvas = props => {
     };
 
     const handleDragStart = (e)=>{
-        globals.operating_right_offset = -customSettings.timeScale.rightOffset;
-        globals.operating_top_offset = customSettings.yScale.top_offset;
-        globals.operating_scale_coordinate_offset = globals.scale_coordinate_offset%globals.xAxisScaleRange;
-        globals.element = e;
+        // globals.operating_right_offset = -customSettings.timeScale.rightOffset;
+        // globals.operating_top_offset = customSettings.yScale.top_offset;
+        //globals.operating_scale_coordinate_offset = scale_coordinate_offset%xAxisScaleRange;
     };
 
     const handleDragging = (e)=>{
@@ -68,17 +62,15 @@ const MainChartCanvas = props => {
 
         temp = props.yScale;
         temp.top_offset=globals.operating_top_offset?(mouse.dragging.offset.y+globals.operating_top_offset):globals.operating_top_offset;
-        props.setYScale(temp);*/
-        if (e === globals.element) {
-            customSettings.timeScale.rightOffset = -1 * (mouse.dragging.offset.x + globals.operating_right_offset);
-            customSettings.yScale.top_offset = globals.operating_top_offset ? (mouse.dragging.offset.y + globals.operating_top_offset) : globals.operating_top_offset;
-            globals.scale_coordinate_offset = globals.operating_scale_coordinate_offset + mouse.dragging.offset.x % globals.xAxisScaleRange;
-            props.draw();
-        }
+        props.setYScale(temp);*//*
+        customSettings.timeScale.rightOffset=-1*(mouse.dragging.offset.x+globals.operating_right_offset);
+        customSettings.yScale.top_offset=globals.operating_top_offset?(mouse.dragging.offset.y+globals.operating_top_offset):globals.operating_top_offset;*/
+        //scale_coordinate_offset = globals.operating_scale_coordinate_offset+mouse.dragging.offset.x%xAxisScaleRange;
+        // props.draw();
     };
 
     return(
-        <canvas id="main-chart-view-canvas"
+        <canvas id="main-time-scale-canvas"
                 className="x-canvas"
                 ref = {canvasRef}
                 onClick={handleLateClick}
@@ -90,4 +82,4 @@ const MainChartCanvas = props => {
     )
 };
 
-export default MainChartCanvas
+export default MainTimeScaleCanvas
