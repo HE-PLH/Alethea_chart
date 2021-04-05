@@ -1,11 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import {lazyEffect} from "../utilities/resize_throttle";
-import ChartContainer from '../components/chart-container'
 import Home from "../components/Home";
+import {ChartInfoContextProvider, DataChangedContextProvider, VirtualDataContextProvider} from "../contexts/ChartContextProvider";
 
 export default function App() {
   return (
-    <Home />
+    <DataChangedContextProvider>
+    <ChartInfoContextProvider>
+      <VirtualDataContextProvider>
+        <Home />
+      </VirtualDataContextProvider>
+    </ChartInfoContextProvider>
+    </DataChangedContextProvider>
   )
 }

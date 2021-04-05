@@ -1,7 +1,9 @@
-import MainChartCanvas from "./chart-main-view";
+import MainChartCanvas from "./canvasComponents/chart-main-view";
 import React, {useEffect, useState} from "react";
-import BackMainChartCanvas from "./chart-back-view";
-import TopMainChartCanvas from "./chart-top-view";
+import BackMainChartCanvas from "./canvasComponents/chart-back-view";
+import TopMainChartCanvas from "./canvasComponents/chart-top-view";
+import ChartInfo from "./chart-info";
+import VolumeCanvas from "./canvasComponents/volumeCanvas";
 
 export default function MainChartContainer(props) {
     const style = {
@@ -10,10 +12,13 @@ export default function MainChartContainer(props) {
     return (
         <td style={style} id="main-chart-super-container">
             <div id="main-chart-container">
-                <BackMainChartCanvas {...props}/>
                 <MainChartCanvas {...props}/>
+                <VolumeCanvas {...props}/>
                 <TopMainChartCanvas {...props} />
+                <BackMainChartCanvas {...props}/>
+                
             </div>
+
         </td>
     )
 }

@@ -1,13 +1,7 @@
 import {customSettings} from "./settings";
 export let Methods = {
     getFinalDate: function(initialTime, difference){
-        let day;
-        switch (customSettings.timeScale.timeDivider) {
-            case "D":
-                day = new Date(initialTime);
-                break;
-        }
-        return day;
+        return (initialTime);
     },
     getObjectCopy: function(obj){
         return JSON.parse(JSON.stringify(obj));
@@ -135,5 +129,28 @@ export let Methods = {
                 return a.indexOf(v) !== -1;
             })
         });
+    },
+    setShow: function (el, show) {
+        if (el) {
+            let _show = "";
+            let _hide = "";
+            switch (show) {
+                case "hide":
+                    _show = "hide";
+                    _hide = "show";
+                    break;
+                case "show":
+                    _hide = "hide";
+                    _show = "show";
+                    break;
+            }
+            if (el.classList.contains(_show)) {
+                el.classList.remove(_show);
+            }
+
+            if (!el.classList.contains(_hide)) {
+                el.classList.add(_hide);
+            }
+        }
     }
 };

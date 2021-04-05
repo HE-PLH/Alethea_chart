@@ -1,13 +1,23 @@
+import {settings, customSettings, userCoefficient} from "./settings";
+import {globals} from "./globals";
+import {Methods} from "./methods";
+import {clearCoordinates} from "./clear-ctx";
+import { niceScale } from "./niceScale";
+
 /**
  *
  * @param data
  * this is the data list containing the time and OHCL values
+ * @param dimensions
+ * is the main chart view canvas dimension
  */
-import {settings, customSettings, userCoefficient} from "./settings";
-import {globals} from "./globals";
-import {Methods} from "./methods";
-
 export function coordinateFromData(data = [], dimensions) {
+    /**
+     * clear previously drawn/painted coordinates only for optimal performance
+     */
+    if(globals.all_coordinates){
+        clearCoordinates(globals.all_coordinates, dimensions);
+    }
     globals.all_coordinates = [];
     /**
      * getting rightOffset and topOffset, which is the distance in coordinates from the right/top of canvas
@@ -65,41 +75,26 @@ export function coordinateFromData(data = [], dimensions) {
          * @type {boolean}
          */
         let increase = false;
+
     /**
-     * do there exist any data to be rendered
+     * ultimateTotalXScale is the carrier of logical x coordinates, useful when hovering current coordinate candle stick/bar info
+     * @type {{}}
      */
-/*
-    let anyLastDefinedTime = sanitizeRecord(data[dataEnd]);
-    anyLastDefinedTime = anyLastDefinedTime?(anyLastDefinedTime.time||anyLastDefinedTime.date):'';
     globals.ultimateTotalXScale = {};
-
-    anyLastDefinedTime = Methods.getFinalDate(anyLastDefinedTime, myCanvas.x);
-    anyLastDefinedTime.setDate(anyLastDefinedTime.getDate() - viableTimeRecords);
-    globals.ultimateTotalXScale[start] = anyLastDefinedTime.toLocaleString();
-
-    for (let i = start+globals.approximateCandleWidth; i < dimensions.w+globals.approximateCandleWidth;i+=globals.approximateCandleWidth){
-        anyLastDefinedTime = Methods.getFinalDate(anyLastDefinedTime, i);
-        anyLastDefinedTime.setDate(anyLastDefinedTime.getDate()+1);
-        globals.ultimateTotalXScale[i] = anyLastDefinedTime.toLocaleString();
-    }*/
-    /*let lastDefinedTime = "";
-    for (let i = start+globals.approximateCandleWidth; i < dimensions.w+globals.approximateCandleWidth;i+=globals.approximateCandleWidth){
-        lastDefinedTime = Methods.getFinalDate(lastDefinedTime, i);
-        lastDefinedTime.setDate(lastDefinedTime.getDate()+1);
-        globals.ultimateTotalXScale[i] = lastDefinedTime.toLocaleString();
-    }
-*/
-    globals.ultimateTotalXScale = {};
-    let lastDefinedTime = sanitizeRecord(data[dataEnd]);
+    let lastDefinedTime = (data[dataEnd]);
+    globals.ultimateTotalXScale[x_coord_end] = {record: lastDefinedTime};
     lastDefinedTime = lastDefinedTime?(lastDefinedTime.time||lastDefinedTime.date):'';
     lastDefinedTime = Methods.getFinalDate(lastDefinedTime);
-    globals.ultimateTotalXScale[x_coord_end] = {time: lastDefinedTime.toLocaleString()};
-
+    globals.ultimateTotalXScale[x_coord_end].time =  lastDefinedTime.toLocaleString();
+    
     for (let i = x_coord_end + globals.approximateCandleWidth; i < dimensions.w; i+=globals.approximateCandleWidth) {
-        lastDefinedTime = Methods.getFinalDate(lastDefinedTime, i);
+        lastDefinedTime = Methods.getFinalDate(lastDefinedTime);        
         lastDefinedTime.setDate(lastDefinedTime.getDate()+1);
         globals.ultimateTotalXScale[i] = {time: lastDefinedTime.toLocaleString()};
     }
+     /**
+     * is there any data to be rendered
+     */
     if (dataEnd>0) {
         let record = {},
             coordinate = {};
@@ -109,7 +104,7 @@ export function coordinateFromData(data = [], dimensions) {
              * useful for finding y scale
              * @type {*[]}
              */
-            let highs = [], lows = [];
+            let highs = [], lows = [], volume = [];
 
             /**
              * get coordinates for full renderable candle bars
@@ -123,47 +118,59 @@ export function coordinateFromData(data = [], dimensions) {
                     break;
                 }
                 record = data[dataEnd - i];
-                record = sanitizeRecord(record);
-                increase = record.close > record.open;
+                increase = record.increase;
                 coordinate = _coordinate(
                     x_coord_end - customSettings.candleStick.barWidth / 2,
                     increase,
                     record
                 );
-                globals.ultimateTotalXScale[x_coord_end] = {time: Methods.getFinalDate(record.date).toLocaleString()};
+                globals.ultimateTotalXScale[x_coord_end] = {record};
+                globals.ultimateTotalXScale[x_coord_end].time = Methods.getFinalDate(record.date).toLocaleString();
                 x_coord_end -= globals.approximateCandleWidth;
-                /**
-                 * start getting coordinates from the last record towards the first
-                 * @type {*}
-                 */
 
                 globals.all_coordinates.push(coordinate);
                 highs.push(record.high);
                 lows.push(record.low);
+                volume.push(record.volume);
             }
+            /**
+             * what if you have space on the left to show old values but no data
+             * in this case we need to guess the possible date values
+             */
             if (x_coord_end>start){
-                lastDefinedTime = sanitizeRecord(data[dataEnd-i]);
+                lastDefinedTime = (data[dataEnd-i+1]);
+                globals.ultimateTotalXScale[x_coord_end] = {record: lastDefinedTime};
                 lastDefinedTime = lastDefinedTime?(lastDefinedTime.time||lastDefinedTime.date):'';
                 lastDefinedTime = Methods.getFinalDate(lastDefinedTime);
-                globals.ultimateTotalXScale[x_coord_end] = {time: lastDefinedTime.toLocaleString()};
-                for (let i = x_coord_end; i < dimensions.w; i-=globals.approximateCandleWidth) {
-                    lastDefinedTime = Methods.getFinalDate(lastDefinedTime, i);
+                globals.ultimateTotalXScale[x_coord_end].time=lastDefinedTime.toLocaleString();
+                for (let i = x_coord_end; i > start; i-=globals.approximateCandleWidth) {
+                    lastDefinedTime = Methods.getFinalDate(lastDefinedTime);
                     lastDefinedTime.setDate(lastDefinedTime.getDate()-1);
                     globals.ultimateTotalXScale[i] = {time: lastDefinedTime.toLocaleString()};
                 }
 
             }
+            /**
+             * get the y limits so as to fit the graph as required
+             * @type {{y1: *, y2: *}}
+             */
             let yLimits = {y1: Math.min(...lows), y2: Math.max(...highs)};
+            let volumeLimits = {y1: Math.min(...volume), y2: Math.max(...volume)};
             y_feed(yLimits, globals.all_coordinates);
-            /*bestPriceScale(10);
-            drawScaleLines(ctx5);*/
+            volume_feed(volumeLimits, globals.all_coordinates);
         }
         return globals.all_coordinates;
     }
 }
 
+/**
+ * how do we show the increasing or decreasing stick?
+ * @param increase
+ * @param record
+ * @returns {{wickTopDisplay: boolean, borderColor: (*), color: (*), wickBottomDisplay: boolean, wickColor: (*)}}
+ */
 function candle_settings(increase = false, record = {}) {
-    record = sanitizeRecord(record);
+    record = (record);
     return  {
         borderColor: increase ? customSettings.candleStick.increaseColor : customSettings.candleStick.decreaseColor,
         wickColor: increase ? customSettings.candleStick.wickIncreaseColor : customSettings.candleStick.wickDecreaseColor,
@@ -182,6 +189,33 @@ function _coordinate(wick = 0, increase = false, record = []) {
         increase: increase
     };
 }
+
+/**
+ * add volume values to the coordinate list
+ * @param volumeLimits
+ * @param obj
+ */
+function volume_feed(volumeLimits, obj) {
+    let volume_range = volumeLimits.y2 - volumeLimits.y1, record = {};
+    let chartYRange = customSettings.volume_scale.volumeBottomLimit-customSettings.volume_scale.volumeTopLimit;
+    globals.volume_division = (1 / volume_range) * chartYRange;
+
+    let val =(v1)=>{
+        return (v1*globals.volume_division)+ customSettings.volume_scale.top_offset;
+    };
+
+    for (let i = 0; i < obj.length; i++) {
+        record = obj[i].record;
+        obj[i].volume = val(volumeLimits.y2 - record.volume);
+    }    
+}
+
+/**
+ * add y values to the coordinate list
+ * @param yLimits
+ * @param obj
+ */
+
 function y_feed(yLimits, obj) {
     let yrange = yLimits.y2 - yLimits.y1, record = {};
     let chartYRange = customSettings.yScale.yBottomLimit-customSettings.yScale.yTopLimit;
@@ -207,38 +241,18 @@ function y_feed(yLimits, obj) {
     }
 }
 
+/**
+ * we need a scale that adjusts itself to show right y/x values shown in the graph dynamically
+ * @param maxTicks
+ * @param dimensions
+ * @returns {[]}
+ */
+
 export function getBestPriceScale(maxTicks = 10, dimensions){
     let visiblePriceRange = dimensions.h/globals.y_division;
     let lowest = globals.highestTop - visiblePriceRange;
     globals.yAxisList = niceScale(lowest,globals.highestTop,maxTicks, globals.yAxisList);
     return globals.yAxisList;
-}
-
-function niceScale( minPoint, maxPoint, maxTicks){
-    const niceNum = ( localRange,  round) => {
-        let exponent,fraction,niceFraction;
-        exponent = Math.floor(Math.log10(localRange));
-        fraction = localRange / Math.pow(10, exponent);
-        if (round) {
-            if (fraction < 1.5) niceFraction = 1;
-            else if (fraction < 3) niceFraction = 2;
-            else if (fraction < 7) niceFraction = 5;
-            else niceFraction = 10;
-        } else {
-            if (fraction <= 1) niceFraction = 1;
-            else if (fraction <= 2) niceFraction = 2;
-            else if (fraction <= 5) niceFraction = 5;
-            else niceFraction = 10;
-        }
-        return niceFraction * Math.pow(10, exponent);
-    };
-    const lst = [];
-    const range = niceNum(maxPoint - minPoint, false);
-    const stepSize = niceNum(range / (maxTicks - 1), true);
-    const lBound = Math.floor(minPoint / stepSize) * stepSize;
-    const uBound = Math.ceil(maxPoint / stepSize) * stepSize;
-    for(let i=lBound;i<=uBound;i+=stepSize) {lst.push(i)}
-    return lst
 }
 
 export function getBestTimeScale(maxTicks, dimensions){
@@ -250,106 +264,3 @@ export function getBestTimeScale(maxTicks, dimensions){
 }
 
 
-/*
-function bestTimeScale(maxTicks){
-    let visibleTimeRange = dimensions.w/globals.approximateCandleWidth;
-    let lowest = 0;
-    globals.xAxisList = niceScale(lowest, visibleTimeRange,maxTicks, globals.xAxisList);
-    return globals.xAxisList;
-}
-
-function drawScaleLines(ctx){
-    ctx.clearRect(0, 0, settings.canvas.main_canvas_back_view.dimensions.w, settings.canvas.main_canvas_back_view.dimensions.h);
-    ctx2.clearRect(0, 0, settings.canvas.priceCanvasTopView.dimensions.w, settings.canvas.priceCanvasTopView.dimensions.h);
-    ctx6.clearRect(0, 0, settings.canvas.time_canvas_main.dimensions.w, settings.canvas.time_canvas_main.dimensions.h);
-    drawHorizontalScaleLines(ctx);
-    drawVerticalScaleLines(ctx);
-}
-
-function drawHorizontalScaleLines(ctx){
-    let itemX = 0, n = 0, current = globals.xAxisList[0], txt = '';
-    for (let i = 1;i<globals.xAxisList.length;i++) {
-        n = (current*globals.approximateCandleWidth)+scale_coordinate_offset;
-        itemX = getClosestXTimeDivision(n);
-        if (itemX) {
-            txt = `${globals.ultimateTotalXScale[itemX].split(",")[0]}`;
-            itemX -= customSettings.candleStick.barWidth / 2;
-            ctx.beginPath();
-            ctx.moveTo(itemX, 0);
-            ctx.lineTo(itemX, settings.canvas.main_canvas_back_view.dimensions.h);
-            // ctx.setLineDash([5, 3]);
-            ctx.strokeStyle = "black";
-            ctx.stroke();
-            ctx.lineWidth = .2;
-            renderTimeAt(itemX, txt, ctx6);
-        }
-        current = globals.xAxisList[i];
-    }
-}
-function drawVerticalScaleLines(ctx){
-    let current = globals.yAxisList[0], itemY = 0, txt = '';
-    for (let i = 1;i<globals.yAxisList.length;i++) {
-        itemY = priceToCoordinate(current);
-        ctx.beginPath();
-        ctx.moveTo(0, itemY);
-        ctx.lineTo(settings.canvas.main_canvas_back_view.dimensions.w, itemY);
-        // ctx.setLineDash([5, 3]);
-        ctx.strokeStyle = "black";
-        ctx.stroke();
-        ctx.lineWidth = .2;
-
-        txt = `${current}`;
-        renderPriceAt(itemY, txt, ctx2);
-
-        current = globals.yAxisList[i];
-    }
-}
-
-function renderTimeAt(itemX, txt, ctx) {
-    ctx.beginPath();
-    ctx.moveTo(itemX, 0);
-    ctx.lineTo(itemX, 3);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = customSettings.barGraph.ticks;
-    ctx.stroke();
-
-    ctx.fillStyle = "black";
-    ctx.font = "12px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(txt, itemX-10, settings.canvas.time_canvas_main.dimensions.h/2);
-    ctx.fill();
-}
-
-function renderPriceAt(itemY, txt, ctx) {
-    ctx.beginPath();
-    ctx.moveTo(0, itemY);
-    ctx.lineTo(3, itemY);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = customSettings.barGraph.ticks;
-    ctx.stroke();
-
-    ctx.fillStyle = "black";
-    ctx.font = "15px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(txt, settings.canvas.priceCanvasTopView.dimensions.w/2, itemY+5);
-    ctx.fill();
-}*/
-
-function toNumber(n) {
-    return parseFloat(n);
-}
-
-function sanitizeRecord(record) {
-    let r = {};
-    for (let i in record){
-        if (record.hasOwnProperty(i)) {
-            r[i.toLowerCase()] = record[i];
-        }
-    }
-    record = r;
-    record.high = toNumber(record.high);
-    record.open = toNumber(record.open);
-    record.low = toNumber(record.low);
-    record.close = toNumber(record.close);
-    return record;
-}

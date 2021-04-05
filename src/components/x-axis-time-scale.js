@@ -7,7 +7,7 @@ function XAxisTimeScaleContainer(props) {
     return (
         <tr id="x-axis-scale-super-container" style={{height: props.height}}>
             <XAxisLeftSpaceContainer dimensions = {{w: props.leftWidth, h: props.height}} />
-            <XAxisMainContainer drawXScale={props.drawXScale} dimensions={{w: props.mainWidth, h: props.height}} />
+            <XAxisMainContainer {...props} dimensions={{w: props.mainWidth, h: props.height}}/>
             <XAxisRightSpaceContainer dimensions = {{w: props.rightWidth, h: props.height}}/>
         </tr>
     )

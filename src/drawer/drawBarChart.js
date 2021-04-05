@@ -24,17 +24,18 @@ export function drawBar(ctx, dimensions) {
     };
     let coordinates = globals.all_coordinates;
     if (coordinates&&coordinates.length>0){
-        ctx.clearRect(0,0, dimensions.w, dimensions.h);
+        // ctx.clearRect(0,0, dimensions.w, dimensions.h);
         exec();
     }
 }
 function drawBarCoordinate(ctx, obj, increase) {
-        ctx.lineWidth = settings.default.barGraph.lineWidth;
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(Math.floor(obj.wick.x), Math.floor(obj.wick.y1));
         ctx.lineTo(Math.floor(obj.wick.x), Math.floor(obj.wick.y4));
         ctx.strokeStyle = obj.candle_settings.wickColor;
         ctx.stroke();
+        ctx.lineWidth = 1;
         if (increase){
             ctx.beginPath();
             ctx.moveTo(Math.floor(obj.wick.x+customSettings.candleStick.barWidth/2), Math.floor(obj.wick.y2));

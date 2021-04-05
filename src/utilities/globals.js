@@ -1,4 +1,9 @@
+import { data } from "../data/sample_data";
+
+
 export let globals = {
+    current_graph : '',
+    canvasOffset: {left: 0, top: 0},
     ultimateTotalXScale: {},
     all_coordinates: [],
     main_canvas_view_context: CanvasRenderingContext2D,
@@ -11,7 +16,13 @@ export let globals = {
     price_canvas_main_view_context: CanvasRenderingContext2D,
     price_canvas_top_view_context: CanvasRenderingContext2D,
 
+    volume_context: CanvasRenderingContext2D,
+
+    
+    my_data: data,
+    virtual_data: [],
     y_division: 0,
+    volume_division: 0,
     yAxisList: [],
     xAxisList: [],
     approximateCandleWidth: 0,

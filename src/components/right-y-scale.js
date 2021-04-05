@@ -1,6 +1,6 @@
 import React from "react";
-import MainYScaleCanvas from "./main-y-scale-canvas";
-import TopViewYScaleCanvas from "./top-view-y-axis-canvas";
+import MainYScaleCanvas from "./canvasComponents/main-y-scale-canvas";
+import TopViewYScaleCanvas from "./canvasComponents/top-view-y-axis-canvas";
 
 export default function rightYScale(props) {
     const style = {

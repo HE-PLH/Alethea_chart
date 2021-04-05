@@ -46,7 +46,44 @@ let mouse = {
     }
 };
 
+export let Touch = {
+    clicking: {
+        status: false,
+        point: {
+            x: 0, y: 0
+        },
+    },
+    dragging: {
+        status: false,
+        point: {
+            x: 0, y: 0
+        },
+        offset: {
+            x: 0,
+            y: 0
+        }
+    },
+
+};
+
 export let drag_start_flag = false;
+
+export const is_swiping = (e)=>{
+        if (e.changedTouches && e.changedTouches.length){
+            const touch = e.changedTouches[0];
+            Touch.dragging.status = true;
+            Touch.dragging.point = {
+                x: touch.clientX,
+                y: touch.clientY
+            };
+            Touch.dragging.offset = {
+                x: touch.clientX-Touch.clicking.point.x,
+                y: touch.clientY-Touch.clicking.point.y
+            };
+            return true;
+        }
+        return false
+};
 
 export const is_dragging = ()=>{
     if(mouse.clicking.status) {
@@ -102,4 +139,5 @@ export const on_mouse_out = (e)=>{
     mouse.hovering.point = {x: e.clientX, y: e.clientY};
 
 };
-export default mouse;
+
+export default mouse

@@ -4,7 +4,7 @@
             font-family:  segoe ui;
             font-weight: bold;
             fill: white;
-            stroke: blue;
+            stroke: #3af;
 
         }
         .logo-name{
@@ -20,7 +20,7 @@
         }
     </style>
     <g class="_logo" >
-        <rect x="0" y="5" width="180" height="42" fill="blue"></rect>
+        <rect x="0" y="5" width="180" height="42" fill="#3af"></rect>
         <path class="l-path" d="M0 0 Q12 25 0 50"/>
         <path class="l-path" d="M10 50v-40L31 0v37L25 40v-34L16 13v34z"/>
         <text x="30" y="30" stroke="none" class="logo-name">A</text>

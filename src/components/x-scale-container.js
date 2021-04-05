@@ -1,6 +1,6 @@
 import React from "react";
-import MainTimeScaleCanvas from "./MainTimeScaleCanvas";
-import TopTimeScaleCanvas from "./timeScaleTopViewCanvas";
+import MainTimeScaleCanvas from "./canvasComponents/MainTimeScaleCanvas";
+import TopTimeScaleCanvas from "./canvasComponents/timeScaleTopViewCanvas";
 
 function XAxisMainContainer(props) {
 
@@ -11,8 +11,8 @@ function XAxisMainContainer(props) {
 
     return (
         <td style={style}  id="x-axis-scale-container">
-            <MainTimeScaleCanvas{...props}/>
-            <TopTimeScaleCanvas{...props}/>
+            <MainTimeScaleCanvas {...props}/>
+            <TopTimeScaleCanvas {...props}/>
         </td>
     )
 }

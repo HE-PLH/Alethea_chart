@@ -2,11 +2,11 @@ import {globals, main_elements} from "./globals";
 import {settings} from "./settings";
 
 function getDevicePixRatio(){
-    // return window.devicePixelRatio || 1;
+    let wpr = window.devicePixelRatio || 1;
 	if(window.innerHeight>window.innerWidth){
-		return window.innerHeight/window.innerWidth+window.devicePixelRatio;
+		return window.innerHeight/window.innerWidth+.5;
 	}else{
-		return (window.innerWidth/window.innerHeight+window.devicePixelRatio)
+		return (window.innerWidth/window.innerHeight+wpr)
 	}
 }
 export function Creator (canvas = HTMLCanvasElement) {
@@ -36,8 +36,9 @@ export function Creator (canvas = HTMLCanvasElement) {
 
 export function getContext2D(canvas = HTMLCanvasElement){
 	const ctx = canvas.getContext('2d');
-	ctx.setTransform(1, 0, 0, 1, 1, 1);
+	// ctx.setTransform(1, 0, 0, 1, 1, 1);
 	ctx.scale(globals.pixRatio,  globals.pixRatio);
+    // ctx.translate(canvas.width/2,canvas.height/2);
     // ctx.translate(globals.pixRatio,  globals.pixRatio);
 	return ctx;
 }

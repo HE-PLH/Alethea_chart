@@ -1,5 +1,5 @@
 import React from "react";
-import MainYScaleCanvas from "./main-y-scale-canvas";
+import MainYScaleCanvas from "./canvasComponents/main-y-scale-canvas";
 
 export default function LeftYScale(props) {
     const style = {

@@ -15,6 +15,8 @@ menu, nav, output, ruby, section, summary,
     padding: 0;
     border: 0;
     font: inherit;
+    text-overflow: ellipsis;
+    transition: all ease .5s;
 }
 time, mark, audio, video {
     font-size: 100%;
@@ -79,7 +81,7 @@ table {
 
 
 .img-pos{
-
+    
 }
 .logo_container{
     min-width: 150px;
@@ -88,8 +90,8 @@ table {
 }
 
 .collapsible-menu-bar-container{
-    flex: auto;
-    width: 500px;
+    flex-wrap: wrap;
+    max-width: 500px;
     height: 100%;
     justify-content: flex-end;
 }
@@ -117,25 +119,44 @@ table {
 .dropdown-container{
     margin: 5px 0 0;
     height: fit-content;
-    overflow: overlay;
+}
+
+.top-bar{
+    justify-content: space-between;
 }
 
 .dropdown-list-item:hover{
     background-color: #18d3fb;
 }
 
-.dropdown-list-item *{
+.dropdown-list-item *, .droppable-action-button *{
     pointer-events: none;
+    cursor: pointer;
+}
+
+.special-dropdown-item{
+    z-index: 15;
+    height: 30px;
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1%;
 }
 
 .dropdown-list-item{
     cursor: pointer;
-    z-index: 5;
+    padding: 0 5px;
+    z-index: 15;
     height: 30px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.droppable-action-button:hover{
+    background-color: #dad0e0;
 }
 .dropdown-div{
     display: none;
@@ -147,7 +168,35 @@ table {
     color: #5b636a;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
     background-color: white;
+    overflow-y: scroll;
+    overflow-x: overlay;
+    scrollbar-width: thin;
 }
+
+.flexible-column span{
+    overflow: hidden;
+    font-weight: bold;
+    min-height: 15px;
+}
+
+.smb_name{
+    color: darkblue;
+}
+
+.smb{
+    color: #3b3b3b;
+}
+
+
+.flexible-column{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font: 14px segoe ui;
+
+}
+
 .d-t-tip{
     position: absolute;
     top: -20px;
@@ -176,6 +225,7 @@ table {
     table-layout:fixed;
     width: 100% !important;
     height: 100% !important;
+    position: absolute;
 }
 #left-body-container, #right-body-container{
     width: 50px;
@@ -217,13 +267,15 @@ table {
     position: absolute;
 }
 
+.time_canvas{
+    cursor: e-resize;
+    position: absolute;
+}
+
 tbody{
     height: 100% !important;
 }
 
-#droppable-action-button{
-    /*background-color: blue;*/
-}
 
 .ic{
 	display: flex;
@@ -232,15 +284,15 @@ tbody{
 }
 
 .show{
-    display: flex;
+    display: flex !important;
 }
 
 .hide{
-    display: none;
+    display: none!important;
 }
 
 
-#droppable-action-button{
+.droppable-action-button{
     height: 100%;
     display: flex;
     align-items: center;
@@ -265,4 +317,132 @@ tbody{
     width: 100%;
     height: 40px;
     background-color: #5c70b0;
+}
+
+.search-input{
+    font-size: 14px;
+    height: 100%;
+    text-align-all: left;
+    width: calc(100% - 40px);
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.search-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    width: 40px;
+    height: 100%;
+}
+.symbol-body{
+    width: calc(70% - 40px);
+}
+.symbol-company-body{
+    width: 30%;
+}
+
+.smb-type, .smb{
+    font-weight: normal;
+    font-size: 12px;
+}
+
+
+#user-x-adjustment{
+    position: absolute;
+    bottom: 20%;
+    width: 200px;
+    margin-left: 40%;
+}
+
+.click-btns:hover{
+    background-color: #b4a9ee;
+}
+.click-btns{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #b2bfcb;
+    z-index: 10;
+    padding: 5px;
+}
+.chart-top-information{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: fit-content;
+    max-width: 100%;
+    position: absolute;
+    font-size: 100%;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    /*font-family: Trebuchet MS,roboto,ubuntu,sans-serif;*/
+    z-index: 1;
+}
+
+.top-title{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+    padding-top: 10px;
+}
+
+
+.top-title-ohcl{
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex;
+    min-height: 20px;
+}
+
+.top-title-names{
+    padding-left: 10px;
+    padding-top: 10px;
+    min-height: 20px;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 23px;
+    text-align: left;
+}
+.top-title-ohcl{
+    flex-wrap: wrap;
+}
+.top-title-ohcl span{
+    height: 20px;
+}
+
+.top-title-price-display{
+    min-height: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.top-chart-title-and-ohcl{
+    display: flex;
+    flex-direction: column;
+}
+
+.d-letter{
+    color: rgba(6, 8, 6, 0.664);
+    padding-left: 5px;
+    padding-right: 1px;
+}
+
+.d-number{
+    color: rgb(0, 139, 132);
+}
+
+.show-title{
+    background: #f3f3f3;
+}
+.show-title:hover, .show-graph:hover, .show-ohcl:hover{
+    background: #858585;
+}
+
+canvas{
+    height: 100%;
 }

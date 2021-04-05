@@ -26,7 +26,7 @@ export function drawCandles(ctx, dimensions) {
         console.log(coordinates[i].wick)
     }*/
     if (coordinates&&coordinates.length>0){
-        ctx.clearRect(0,0, dimensions.w, dimensions.h);
+        // ctx.clearRect(0,0, dimensions.w, dimensions.h);
         exec();
     }
 }

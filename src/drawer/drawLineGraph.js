@@ -4,7 +4,7 @@ import {globals} from "../utilities/globals";
 export function drawLine(ctx, dimensions, area = true) {
     let coordinates = globals.all_coordinates;
     if (coordinates&&coordinates.length>0){
-        ctx.clearRect(0, 0, dimensions.w, dimensions.h);
+        // ctx.clearRect(0, 0, dimensions.w, dimensions.h);
         drawLineCoordinate(ctx, coordinates, area, dimensions);
     }
 }

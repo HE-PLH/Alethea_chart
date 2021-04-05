@@ -73,14 +73,27 @@ export let settings = {
             top_offset: 40*/
         },
         barGraph : {
-            lineWidth: 3,
+            lineWidth: 2,
             ticks: 1,
         },
+        
+        volumeGraph : {
+            top: 0,
+            height: 100,
+        },
+
         yScale : {
             top_offset: 0,
             initial_top_offset: 50,
             yTopLimit: 0,
             yBottomLimit: 400,
+            initial_bottom_offset: 100,
+        },
+        volume_scale : {
+            top_offset: 0,
+            initial_top_offset: 50,
+            volumeTopLimit: 0,
+            volumeBottomLimit: 100,
             initial_bottom_offset: 0,
         },
         chart: {
@@ -88,7 +101,7 @@ export let settings = {
         // type: 'areaGraph',
         type: 'candleStick',
         // type: 'barGraph',
-    },
+    }
     }
 };
 
@@ -96,8 +109,8 @@ export let settings = {
 export let customSettings = Methods.getObjectCopy(settings.default);
 
 export let userCoefficient = {
-    zoomIn: 5,
-    zoomOut: 5,
+    zoomIn: 2,
+    zoomOut: 2,
     scrollLeft: customSettings.timeScale.barSpacing+customSettings.candleStick.barWidth||5,
     scrollRight: customSettings.timeScale.barSpacing+customSettings.candleStick.barWidth||5,
 };
