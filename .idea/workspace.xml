@@ -25,7 +25,19 @@
     <option name="showStatusBarWidget" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="" />
+    <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/MainTimeScaleCanvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-back-view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-main-view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-top-view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/main-y-scale-canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/timeScaleTopViewCanvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/top-view-y-axis-canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/volumeCanvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/division-choose.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/niceScale.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/time_division.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +212,7 @@
       <workItem from="1616392407255" duration="13657000" />
       <workItem from="1616487027781" duration="29000" />
       <workItem from="1617611076885" duration="1977000" />
-      <workItem from="1617864778487" duration="1640000" />
+      <workItem from="1617864778487" duration="2040000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1614149830282</created>
@@ -237,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617865808138</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="time division feature initialised">
+      <created>1617866893541</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617866893541</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
