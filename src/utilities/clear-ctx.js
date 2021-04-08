@@ -75,9 +75,9 @@ export function clearCoordinates(coordinates, dimensions) {
 }
 
 export function clearMarks(x_dimensions, y_dimensions){
-    globals.main_canvas_back_view_context.clearRect(globals.coordinate.x-5, 0, 10, y_dimensions.h);
-    globals.main_canvas_back_view_context.clearRect(0, globals.coordinate.y-5, x_dimensions.w, 10);   
+    globals.main_canvas_back_view_context.clearRect(globals.coordinate.x-customSettings.candleStick.barWidth, 0, customSettings.candleStick.barWidth*2, y_dimensions.h);
+    globals.main_canvas_back_view_context.clearRect(0, globals.coordinate.y-customSettings.candleStick.barWidth, x_dimensions.w, customSettings.candleStick.barWidth*2);   
 
-    globals.time_canvas_top_view_context.clearRect(globals.coordinate.x-70, 0, 140, x_dimensions.h-8);
+    globals.time_canvas_top_view_context.clearRect(globals.coordinate.x-65-customSettings.candleStick.barWidth, 0, 130+customSettings.candleStick.barWidth*2, x_dimensions.h-8);
     globals.price_canvas_top_view_context.clearRect(0, globals.coordinate.y-12, y_dimensions.w, 24);   
 }

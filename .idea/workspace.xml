@@ -26,60 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.eQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/firebase-hosting-merge.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/firebase-hosting-pull-request.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/adjustment-btn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/chart-choos-action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/choose-comparator-action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/choose-indicator-action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/choose-symbol-sction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/item-title-name.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/item-title-ohcl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/clear-ctx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainTimeScaleCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-back-view.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-main-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-main-container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-main-view.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart-top-view.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chart_widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart_widget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/left-y-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/left-y-scale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main-y-scale-canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/right-y-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/right-y-scale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/timeScaleTopViewCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/top-view-y-axis-canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/x-axis-time-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-axis-time-scale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/x-scale-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-scale-container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/sample_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sample_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawer/candle-draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/candle-draw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawer/drawBarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawBarChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawer/drawGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawGraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/drawer/drawLineGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawLineGraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/media/images/alethea_logo_name.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/images/alethea_logo_name.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/chart-canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/chart-canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/cv_events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/cv_events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/main-data-converter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/main-data-converter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/scale-renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/scale-renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/time_distributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/time_distributor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/clear-ctx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/clear-ctx.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +203,8 @@
       <workItem from="1616305654282" duration="24081000" />
       <workItem from="1616392407255" duration="13657000" />
       <workItem from="1616487027781" duration="29000" />
-      <workItem from="1617611076885" duration="1130000" />
+      <workItem from="1617611076885" duration="1977000" />
+      <workItem from="1617864778487" duration="743000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1614149830282</created>
@@ -270,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615591909328</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="time division feature initialised">
+      <created>1617612403150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617612403150</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +264,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial" />
     <MESSAGE value="initial prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial prototype" />
+    <MESSAGE value="time division feature initialised" />
+    <option name="LAST_COMMIT_MESSAGE" value="time division feature initialised" />
   </component>
 </project>
