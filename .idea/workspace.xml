@@ -26,9 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/clear-ctx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/clear-ctx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/ChartContextProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/contexts.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +203,7 @@
       <workItem from="1616392407255" duration="13657000" />
       <workItem from="1616487027781" duration="29000" />
       <workItem from="1617611076885" duration="1977000" />
-      <workItem from="1617864778487" duration="743000" />
+      <workItem from="1617864778487" duration="979000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1614149830282</created>
@@ -227,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617612403150</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="time division feature initialised">
+      <created>1617865562956</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617865562956</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
