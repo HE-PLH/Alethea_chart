@@ -25,10 +25,7 @@
     <option name="showStatusBarWidget" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/contexts/ChartContextProvider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contexts/contexts.js" afterDir="false" />
-    </list>
+    <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,15 +86,15 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\media" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\components" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\public" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\utilities" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\drawer" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\data" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\media" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -203,7 +200,7 @@
       <workItem from="1616392407255" duration="13657000" />
       <workItem from="1616487027781" duration="29000" />
       <workItem from="1617611076885" duration="1977000" />
-      <workItem from="1617864778487" duration="979000" />
+      <workItem from="1617864778487" duration="1640000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1614149830282</created>
@@ -233,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617865562956</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="time division feature initialised">
+      <created>1617865808138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617865808138</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
