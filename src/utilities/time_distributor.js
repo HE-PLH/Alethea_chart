@@ -6,17 +6,25 @@ export function priceToCoordinate(price) {
     return ((globals.highestTop - price)*globals.y_division);
 }
 
-export function drawMarkLinesAt(coordinate, dimension, x_scale_dimensions, y_scale_dimensions, barWidth, setRecord) {
-    let x = getClosestXTimeDivision(coordinate.x);
+export function drawMarkLinesAt(x, coordinate, dimension, x_scale_dimensions, y_scale_dimensions, barWidth, flag) {
     if (x) {
         let date = globals.ultimateTotalXScale[x].time;
         let record = globals.ultimateTotalXScale[x].record;
         let y = coordinateToPrice(coordinate.y);
         x -= barWidth / 2;
-        drawIndicatorMarkLines(globals.main_canvas_back_view_context, x, coordinate.y, dimension);
+        // if(x>=globals.markDraw.x) {
+            drawYIndicatorMarkLines(globals.main_canvas_back_view_context, x, dimension);
+        // }
+        drawXIndicatorMarkLines(globals.main_canvas_back_view_context, coordinate.y, dimension);
         renderCurrentTimeLabel(globals.time_canvas_top_view_context, x, y, date, x_scale_dimensions);
-        // console.log(globals.price_canvas_main_view_context)
+        // console.timeEnd("lines");
+        // console.time("time");
+
+        // console.timeEnd("time");
+        // console.time("price");
         renderCurrentPriceLabel(globals.price_canvas_top_view_context, x, coordinate.y, `${y.toFixed(2)}`, y_scale_dimensions);
+        // console.timeEnd("price");
+        // globals.markDraw = {x}
         return record;
     }
 }
@@ -28,12 +36,15 @@ function renderCurrentPriceLabel(ctx, x, y, txt, dimension) {
     ctx.fillStyle = "gray";
     ctx.fillRect(0, y-10, dimension.w, 20);
     ctx.fill();
+    ctx.closePath();
 
+    ctx.beginPath();
     ctx.fillStyle = "white";
     ctx.font = "12px sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(txt, dimension.w/2, y+5);
     ctx.fill();
+    ctx.closePath();
 
 }
 
@@ -44,6 +55,7 @@ function renderCurrentTimeLabel(ctx, x, y, date, dimension) {
     ctx.fillStyle = "gray";
     ctx.fillRect(x-65, 0, 130, dimension.h-10);
     ctx.fill();
+    ctx.closePath();
 
     ctx.beginPath();
     ctx.fillStyle = "white";
@@ -51,13 +63,14 @@ function renderCurrentTimeLabel(ctx, x, y, date, dimension) {
     ctx.textAlign = "center";
     ctx.fillText(date?date:'', x, dimension.h/2);
     ctx.fill();
+    ctx.closePath();
 
 }
 
 
 export function getClosestXTimeDivision(x) {
     let min = [], u = [], v = 0;
-    
+
     for (let i in globals.ultimateTotalXScale){
         if ((v =Math.abs(x+globals.approximateCandleWidth/2-i))<=globals.approximateCandleWidth){
             min.push(i);
@@ -72,19 +85,21 @@ function coordinateToPrice(yCoordinate) {
 }
 
 
-function drawIndicatorMarkLines(ctx, x = 0, y = 0, dimension) {
+function drawXIndicatorMarkLines(ctx, y = 0, dimension) {
     ctx.beginPath();
     ctx.setLineDash([5, 3]);
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = customSettings.marks.color;
+    ctx.lineWidth = customSettings.marks.lineWidth;
     ctx.moveTo(0, y);
     ctx.lineTo(dimension.w, y);
     ctx.stroke();
     ctx.closePath();
-    
+}
+function drawYIndicatorMarkLines(ctx, x = 0, dimension) {
     ctx.beginPath();
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 3]);
+    ctx.strokeStyle = customSettings.marks.color;
+    ctx.lineWidth = customSettings.marks.lineWidth;
     ctx.moveTo(x, 0);
     ctx.lineTo(x, dimension.h);
     ctx.stroke();
@@ -105,7 +120,11 @@ export let x_axis = {
     },
 
     zoomOut: ()=>{
-        customSettings.candleStick.barWidth-=userCoefficient.zoomOut;
+        if(customSettings.candleStick.barWidth>2) {
+            customSettings.candleStick.barWidth -= userCoefficient.zoomOut;
+        }else {
+            customSettings.candleStick.barWidth=2
+        }
         /*
          * careful now, zooming into negative values is a bad idea
          */
@@ -115,9 +134,9 @@ export let x_axis = {
 
     },
     scrollLeft: ()=>{
-        customSettings.timeScale.rightOffset+=userCoefficient.scrollLeft;
+        customSettings.timeScale.rightOffset+=/*userCoefficient.scrollLeft*/globals.approximateCandleWidth;
     },
     scrollRight: ()=>{
-        customSettings.timeScale.rightOffset-=userCoefficient.scrollRight;
+        customSettings.timeScale.rightOffset-=/*userCoefficient.scrollRight*/globals.approximateCandleWidth;
     }
 };

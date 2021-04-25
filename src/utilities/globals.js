@@ -17,8 +17,16 @@ export let globals = {
     price_canvas_top_view_context: CanvasRenderingContext2D,
 
     volume_context: CanvasRenderingContext2D,
+    dimensions_Master: {},
 
-    
+    // markClear : {
+    //     x: 0,
+    // },
+    // markDraw : {
+    //     x: 0,
+    // },
+    special_x: 0,
+    c_change : false,
     my_data: data,
     virtual_data: [],
     y_division: 0,
@@ -31,6 +39,8 @@ export let globals = {
     operating_right_offset: 0,
     operating_top_offset: 0,
     operating_scale_coordinate_offset: 0,
+    operating_settings_top: 0,
+    operating_settings_left: 0,
     scaleWidth: 50,
     highestTop: 0,
     coordinate: {x: 0, y: 0},

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="" />
     <option name="SERVER_URL" value="http://buildserver" />
@@ -26,17 +29,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d133186-8506-4690-a418-26c9b2c77e8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/MainTimeScaleCanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-back-view.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-main-view.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-top-view.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/main-y-scale-canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/timeScaleTopViewCanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/top-view-y-axis-canvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/canvasComponents/volumeCanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/division-choose.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/niceScale.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/time_division.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chart-settings-gui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chart-settings-option.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chart-settings-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chart-widget-main-body.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cs-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/cs-title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/left-body-container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/right-body-container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/settings-action.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/drawer/draw-volumes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilities/change-dimensions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Alethea_chart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Alethea_chart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/media/icons/svg_icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/media/icons/svg_icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/adjustment-btn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/adjustment-btn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/bottom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bottom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/MainTimeScaleCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/MainTimeScaleCanvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/chart-back-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-back-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/chart-main-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-main-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/chart-top-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/chart-top-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/main-y-scale-canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/main-y-scale-canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/timeScaleTopViewCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/timeScaleTopViewCanvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/top-view-y-axis-canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/top-view-y-axis-canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvasComponents/volumeCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvasComponents/volumeCanvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-choos-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-choos-action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-main-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-main-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart-options-nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart-options-nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart_widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart_widget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/choose-comparator-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/choose-comparator-action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/choose-indicator-action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/choose-indicator-action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/choose-symbol-sction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/choose-symbol-sction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/division-choose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/division-choose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item-title-name.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-title-name.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/item-title-ohcl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-title-ohcl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/left-y-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/left-y-scale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/right-y-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/right-y-scale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/top-nav-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/top-nav-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/x-axis-left-space-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-axis-left-space-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/x-axis-right-space-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-axis-right-space-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/x-axis-time-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-axis-time-scale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/x-scale-container.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/x-scale-container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/ChartContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/ChartContextProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/contexts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/contexts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/sample_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sample_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawer/candle-draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/candle-draw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawer/drawBarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawBarChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawer/drawGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawGraph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/drawer/drawLineGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/drawer/drawLineGraph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/main-hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/main-hooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/media/icons/svg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/icons/svg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/media/icons/svg_icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/icons/svg_icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/media/images/alethea_logo_name.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/images/alethea_logo_name.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/chart-canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/chart-canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/clear-ctx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/clear-ctx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/cv_events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/cv_events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/globals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/main-data-converter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/main-data-converter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/niceScale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/niceScale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/resize_throttle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/resize_throttle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/scale-renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/scale-renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/time-scale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/time-scale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/time_distributor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/time_distributor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilities/time_division.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/time_division.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +139,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1ompwKYYoEfG2mSZXddwcVFGyv0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -83,7 +159,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/foodApp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,20 +169,21 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\media" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\components" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\public" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\utilities" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\drawer" />
       <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PATRICK K\OneDrive\projects\alethea\Alethea_chart\src\media" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,6 +243,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.filter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -212,7 +294,28 @@
       <workItem from="1616392407255" duration="13657000" />
       <workItem from="1616487027781" duration="29000" />
       <workItem from="1617611076885" duration="1977000" />
-      <workItem from="1617864778487" duration="2040000" />
+      <workItem from="1617864778487" duration="5229000" />
+      <workItem from="1617901421511" duration="2009000" />
+      <workItem from="1617990103831" duration="2925000" />
+      <workItem from="1618037822842" duration="44415000" />
+      <workItem from="1618126541897" duration="8870000" />
+      <workItem from="1618143585980" duration="3493000" />
+      <workItem from="1618162361306" duration="5179000" />
+      <workItem from="1618170993963" duration="7388000" />
+      <workItem from="1618328190452" duration="15166000" />
+      <workItem from="1618378961302" duration="11856000" />
+      <workItem from="1618399464627" duration="7352000" />
+      <workItem from="1618418221566" duration="2597000" />
+      <workItem from="1618469598229" duration="3242000" />
+      <workItem from="1618502928746" duration="4142000" />
+      <workItem from="1618514626520" duration="13303000" />
+      <workItem from="1618555517440" duration="15686000" />
+      <workItem from="1618647866641" duration="18036000" />
+      <workItem from="1618779429640" duration="1076000" />
+      <workItem from="1618818293731" duration="3882000" />
+      <workItem from="1619141434836" duration="44100000" />
+      <workItem from="1619334405669" duration="4121000" />
+      <workItem from="1619341917713" duration="4475000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1614149830282</created>
@@ -256,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617866893541</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="time division feature initialised">
+      <created>1617867166936</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617867166936</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Alethea_chart.iml" filepath="$PROJECT_DIR$/.idea/Alethea_chart.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/foodApp/.idea/foodApp.iml" filepath="$USER_HOME$/Desktop/foodApp/.idea/foodApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Web/pdfApi/.idea/pdfApi.iml" filepath="$PROJECT_DIR$/../../Web/pdfApi/.idea/pdfApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../reactDjango/.idea/reactDjango.iml" filepath="$PROJECT_DIR$/../../reactDjango/.idea/reactDjango.iml" />
     </modules>
   </component>
 </project>

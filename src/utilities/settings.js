@@ -23,24 +23,38 @@ export let settings = {
             background: "transparent"
         },
         time_canvas_main: {
-            dimensions:{w: 800,h: 30},
+            dimensions:{w: 800,h: 40},
             background: "transparent"
         },
         time_canvas_top_view: {
-            dimensions:{w: 800,h: 30},
+            dimensions:{w: 800,h: 40},
             background: "transparent"
         }
-
     },
     initial: {
         left: 0,
         right: 1,
     },
+    topNavMajor: {
+        height: 40,
+    },
+    chooseTab: {
+        height: 40,
+    },
+    bottomTab: {
+        height: 40,
+    },
+    leftSidebar: {
+        width: 70,
+    },
+    rightSidebar: {
+        width: 70,
+    },
     default : {
         timeScale : {
             rightOffset:30,
             display: false,
-            barSpacing: 1,
+            barSpacing: 2,
             timeDisplay: true,
             secondDisplay: false,
             timeDivider: "D",
@@ -51,8 +65,9 @@ export let settings = {
             wickColor: '#737375',
             wickIncreaseColor: '#26a69a',
             wickDecreaseColor: '#ef5350',
-            wickDisplay: 'true',
-            borderDisplay: 'true',
+            wickDisplay: true,
+            borderDisplay: false,
+            bodyDisplay: true,
             borderColor: '#378658',
             borderIncreaseColor: '#26a69a',
             borderDecreaseColor: '#ef5350',
@@ -75,13 +90,19 @@ export let settings = {
         barGraph : {
             lineWidth: 2,
             ticks: 1,
+            background1: "#FFFFFF",
+            background2: "#FFFFFF",
+            background: "gradient",
         },
         
         volumeGraph : {
             top: 0,
             height: 100,
         },
-
+        marks: {
+            color: "black",
+            lineWidth: 1,
+        },
         yScale : {
             top_offset: 0,
             initial_top_offset: 50,
@@ -114,3 +135,4 @@ export let userCoefficient = {
     scrollLeft: customSettings.timeScale.barSpacing+customSettings.candleStick.barWidth||5,
     scrollRight: customSettings.timeScale.barSpacing+customSettings.candleStick.barWidth||5,
 };
+

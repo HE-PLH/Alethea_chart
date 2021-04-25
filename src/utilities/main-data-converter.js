@@ -15,9 +15,7 @@ export function coordinateFromData(data = [], dimensions) {
     /**
      * clear previously drawn/painted coordinates only for optimal performance
      */
-    if(globals.all_coordinates){
-        clearCoordinates(globals.all_coordinates, dimensions);
-    }
+
     globals.all_coordinates = [];
     /**
      * getting rightOffset and topOffset, which is the distance in coordinates from the right/top of canvas
@@ -173,10 +171,8 @@ function candle_settings(increase = false, record = {}) {
     record = (record);
     return  {
         borderColor: increase ? customSettings.candleStick.increaseColor : customSettings.candleStick.decreaseColor,
-        wickColor: increase ? customSettings.candleStick.wickIncreaseColor : customSettings.candleStick.wickDecreaseColor,
         wickTopDisplay: increase ? ((record.high - record.close) > 0) : ((record.high - record.open) > 0),
         wickBottomDisplay: increase ? ((record.open - record.low) > 0) : ((record.close - record.low) > 0),
-        color: increase ? customSettings.candleStick.increaseColor : customSettings.candleStick.decreaseColor,
     }
 }
 function _coordinate(wick = 0, increase = false, record = []) {

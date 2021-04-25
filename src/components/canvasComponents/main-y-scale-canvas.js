@@ -12,6 +12,7 @@ import {adjustDimensions, Creator, getContext2D} from "../../utilities/chart-can
 import {lazyEffect} from "../../utilities/resize_throttle";
 import {settings, customSettings} from "../../utilities/settings";
 import {drawMarkLinesAt} from "../../utilities/time_distributor";
+import RightYScale from "../right-y-scale";
 
 const MainYScaleCanvas = props => {
     const canvasRef =  useRef(null);
@@ -20,7 +21,7 @@ const MainYScaleCanvas = props => {
         const canvas = canvasRef.current;
         globals.price_canvas_main_view_context = getContext2D(new Creator(canvas).style({dimensions:props.dimensions}));
         props.drawYScale();
-    }, [props]);
+    }, [props.dimensions]);
 
     const handleEarlyClick = (e)=>{
         on_start_click(e);
@@ -38,6 +39,7 @@ const MainYScaleCanvas = props => {
     };
 
     const handleMouseUp = (e)=>{
+        globals.c_change = false;
         on_released(e);
     };
 
@@ -60,12 +62,19 @@ const MainYScaleCanvas = props => {
 
     const handleDragging = (e)=>{
         if (e === globals.element) {
-            customSettings.yScale.yTopLimit = (globals.operating_top_limit - mouse.dragging.offset.y);
-            customSettings.yScale.top_offset = (globals.operating_top_offset - mouse.dragging.offset.y);
-            customSettings.yScale.yBottomLimit = (globals.operating_bottom_limit + mouse.dragging.offset.y);
-            if (customSettings.yScale.yBottomLimit - customSettings.yScale.yTopLimit > 0) {
+            if((customSettings.yScale.yBottomLimit - customSettings.yScale.yTopLimit)>50) {
+                globals.c_change = true;
+                customSettings.yScale.yTopLimit = (globals.operating_top_limit - mouse.dragging.offset.y);
+                customSettings.yScale.top_offset = (globals.operating_top_offset - mouse.dragging.offset.y);
+                customSettings.yScale.yBottomLimit = (globals.operating_bottom_limit + mouse.dragging.offset.y);
                 props.draw();
+            }else{
+                mouse.dragging.offset.y = 0;
+                customSettings.yScale.yTopLimit = (globals.operating_top_limit - mouse.dragging.offset.y);
+                customSettings.yScale.top_offset = (globals.operating_top_offset - mouse.dragging.offset.y);
+                customSettings.yScale.yBottomLimit = (globals.operating_bottom_limit + mouse.dragging.offset.y);
             }
+
         }
     };
 
@@ -88,6 +97,7 @@ const MainYScaleCanvas = props => {
 
     const handleTouchDragging = (e) => {
         if (e === globals.element) {
+            globals.c_change = true;
             customSettings.yScale.yTopLimit = (globals.operating_top_limit - Touch.dragging.offset.y);
             customSettings.yScale.top_offset = (globals.operating_top_offset - Touch.dragging.offset.y);
             customSettings.yScale.yBottomLimit = (globals.operating_bottom_limit + Touch.dragging.offset.y);
@@ -103,6 +113,7 @@ const MainYScaleCanvas = props => {
         }
     };
     const handleTouchEnd = (e) => {
+        globals.c_change = false;
         const touch = e.changedTouches[0];
         Touch.dragging.status = false;
         Touch.clicking.status = false;

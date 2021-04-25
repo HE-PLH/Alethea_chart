@@ -4,7 +4,7 @@ import {settings} from "./settings";
 function getDevicePixRatio(){
     let wpr = window.devicePixelRatio || 1;
 	if(window.innerHeight>window.innerWidth){
-		return window.innerHeight/window.innerWidth+.5;
+		return window.innerHeight/window.innerWidth+wpr;
 	}else{
 		return (window.innerWidth/window.innerHeight+wpr)
 	}
@@ -28,7 +28,7 @@ export function Creator (canvas = HTMLCanvasElement) {
             this.canvas.height = Math.floor(styling_obj.dimensions.h * globals.pixRatio);
         }
         if (styling_obj.background) {
-            this.canvas.style.backgroundColor = styling_obj.background;
+            this.canvas.style.background = `${styling_obj.background}`;
         }
         return this.canvas;
     }

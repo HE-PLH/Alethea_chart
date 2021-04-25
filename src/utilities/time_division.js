@@ -18,7 +18,7 @@ function exec(data, time){
     let date = new Date(record.date), temp = 0, result = [];
     record.date = date;
     record.increase = record.close > record.open;
-    for (let i = 1;i< data.length; i++){
+    for (let i = 1;i< data.length-1; i++){
         record = sanitizeRecord(data[i]);
         temp = new Date(record.date);
         if ((temp-date)>time) {
@@ -36,7 +36,7 @@ function execAbsolute(data, day){
     record.date = date;
     record.increase = record.close > record.open;
     result.push(record)
-    for (let i = 1;i< data.length; i++){
+    for (let i = 1;i< data.length-1; i++){
         record = sanitizeRecord(data[i]);
         temp = new Date(record.date);
         if (temp[`get${day}`]()!==date[`get${day}`]()) {
@@ -57,7 +57,6 @@ function execAbsoluteWeek(data){
     record.date = date;
     record.increase = record.close > record.open;
     temp = getLastSunday(record.date);
-    console.log(record.date)
     result.push(record)
     for (let i = data.length-2;i>-1; i--){
         record = sanitizeRecord(data[i]);

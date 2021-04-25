@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="reactDjango" />
+    <orderEntry type="module" module-name="pdfApi" />
+    <orderEntry type="module" module-name="foodApp" />
   </component>
 </module>

@@ -8,6 +8,7 @@ import {ComparatorAction} from "./choose-comparator-action";
 import {IndicatorAction} from "./choose-indicator-action";
 import {ChartAction} from "./chart-choos-action";
 import {TimeDivisionAction} from "./division-choose";
+import {SettingsAction} from "./settings-action";
 
 function ActionButtons(props) {
     const style = {
@@ -21,6 +22,7 @@ function ActionButtons(props) {
             <ChartAction setChartType = {props.setChartType}/>
             <IndicatorAction/>
             <TimeDivisionAction />
+            <SettingsAction menuClick={props.menuClick}/>
         </div>
     )
 }

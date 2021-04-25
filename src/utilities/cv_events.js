@@ -1,3 +1,5 @@
+import {globals} from "./globals";
+
 let mouse = {
     clicking: {
         status: false,
@@ -122,6 +124,7 @@ export const on_mouse_move = (e)=>{
 };
 
 export const on_released = (e)=>{
+    globals.c_change = false;
     mouse.hovering.status = false;
     mouse.moving.point = {x: e.clientX, y: e.clientY};
     drag_start_flag = false;

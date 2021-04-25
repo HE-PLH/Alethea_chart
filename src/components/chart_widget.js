@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import ChartContainer from "./chart-container";
+import {globals} from "../utilities/globals";
 
 export default function ChartWidget(props) {
-    return (
-        <div id="super-chart-widget-container">
-            <ChartContainer {...props}/>
-        </div>
 
+    return (
+        <>
+            <ChartContainer {...props}/>
+        </>
     )
 }

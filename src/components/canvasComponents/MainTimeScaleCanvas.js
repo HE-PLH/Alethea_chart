@@ -38,6 +38,7 @@ const MainTimeScaleCanvas = props => {
 
     const handleMouseUp = (e)=>{
         on_released(e);
+        globals.c_change = false;
     };
 
     const handleMouseOut = (e)=>{
@@ -57,6 +58,7 @@ const MainTimeScaleCanvas = props => {
     };
 
     const handleDragging = (e)=>{
+        globals.c_change = true;
         let a = globals.operating_bar_width - mouse.dragging.offset.x/10;
         a = a.toFixed(1);
         if (a>0){
@@ -86,6 +88,7 @@ const MainTimeScaleCanvas = props => {
 
     function handleTouchDragging(e) {
         if (e === globals.element) {
+            globals.c_change = true;
             let a = globals.operating_bar_width - Touch.dragging.offset.x/10;
             a = a.toFixed(1);
             if (a>0){
@@ -101,6 +104,7 @@ const MainTimeScaleCanvas = props => {
         }
     };
     const handleTouchEnd = (e) => {
+        globals.c_change = false;
         const touch = e.changedTouches[0];
         Touch.dragging.status = false;
         Touch.clicking.status = false;

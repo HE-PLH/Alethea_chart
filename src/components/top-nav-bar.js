@@ -1,9 +1,10 @@
 import React from "react";
 import ChartContainer from "./chart-container";
+import {globals} from "../utilities/globals";
 
 export default function TopNavMajor() {
     return (
-        <div id="top-bar" className="top-bar tops row-frame">
+        <div id="top-bar" className="top-bar tops row-frame" style={{width: "100%", height: globals.dimensions_Master.topNavMajor||0}}>
             <div className="logo_container">
                 <img className="img-pos" src="../media/images/alethea_logo_name.svg" alt="logo"/>
             </div>

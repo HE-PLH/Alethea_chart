@@ -9,11 +9,6 @@ export function execute_draw(type, mainCanvasDimensions) {
         case 'candleStick':
             globals.current_graph = 'candleStick';
             drawCandles(globals.main_canvas_view_context, mainCanvasDimensions);
-            /*let ctx = globals.main_canvas_view_context;
-            ctx.beginPath();
-            ctx.arc(100, 100, 50, 0, 2*Math.PI, false);
-            ctx.fillStyle = "blue";
-            ctx.fill();*/
             break;
         case 'barGraph':
             globals.current_graph = 'barGraph';
